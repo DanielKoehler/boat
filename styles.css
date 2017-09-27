@@ -152,7 +152,7 @@ span.c-permalink {
     max-width: 90%;
 }
 
-.page > .wp-caption.alignleft, .page .wp-caption.alignright, .page > .wp-caption.aligncenter, image-grid .wp-caption {
+.pad.content .wp-caption.alignleft, .pad.content .wp-caption.alignright, .pad.content .wp-caption.aligncenter, image-grid .wp-caption {
     margin: 0 auto;
     margin-top: 50px;
     background: rgba(244, 244, 244, 1);
