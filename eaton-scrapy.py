@@ -23,59 +23,62 @@ class WeeblyScraper():
 
     def scrape(self, pages):
 
-        output = '<html><head><link rel="stylesheet" type="text/css" href="../styles.css"></head><body>'
+        images = ["https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/jean-and-anna-layout-the-rudder1.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/jean-and-anna-w-rudder1.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/shaft-in-forge.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/hot-bronze.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/bending-the-bronze.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/hinges.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/rudder-mounted.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/the-wheel.jpg", "https://eatonbatsonboatbuilding.files.wordpress.com/2010/12/steering.jpg"]
+        for i in images:
+            self.download_image(i)
+        # output = '<html><head><link rel="stylesheet" type="text/css" href="../styles.css"></head><body>'
 
-        for post_url in pages:
-            url = urlopen(post_url)
-            soup = BeautifulSoup(url.read(), 'html.parser')
+        # for post_url in pages:
+        #     url = urlopen(post_url)
+        #     soup = BeautifulSoup(url.read(), 'html.parser')
 
-            title = soup.findAll('title')
-            title = title[0].get_text().encode('utf-8', 'ignore')
+        #     title = soup.findAll('title')
+        #     title = title[0].get_text().encode('utf-8', 'ignore')
 
-            print(title)
+        #     print(title)
 
-            date = soup.findAll('div', {'id': 'single-date'})
+        #     date = soup.findAll('div', {'id': 'single-date'})
 
-            if date:
+        #     if date:
 
-                date = date[0].get_text().encode('utf-8', 'ignore').strip()
-                date = datetime.datetime.strptime(date.decode('utf-8'), '%d/%m/%Y' if DATE_FORMAT == 'fr' else '%B %d, %Y').strftime('%Y-%m-%d')
-            else:
-                date = "page"
+        #         date = date[0].get_text().encode('utf-8', 'ignore').strip()
+        #         date = datetime.datetime.strptime(date.decode('utf-8'), '%d/%m/%Y' if DATE_FORMAT == 'fr' else '%B %d, %Y').strftime('%Y-%m-%d')
+        #     else:
+        #         date = "page"
 
-            for i in soup.find('div', {'id': 'content'}).findAll('img'):
-                i['src'] = '../images/' + self.download_image(i['src']) 
+        #     for i in soup.find('div', {'id': 'content'}).findAll('img'):
+        #         i['src'] = '../images/' + self.download_image(i['src']) 
 
-                i.attrs = {key:value for key,value in i.attrs.items() 
-                                 if key in ['src', 'width', 'height']}
+        #         i.attrs = {key:value for key,value in i.attrs.items() 
+        #                          if key in ['src', 'width', 'height']}
 
-            content = soup.findAll('div', {'id': 'content'})
-            content = content[0].prettify(formatter='html')
+        #     content = soup.findAll('div', {'id': 'content'})
+        #     content = content[0].prettify(formatter='html')
 
-            # download_image
-            # 
+        #     # download_image
+        #     # 
 
 
-            url = post_url.replace(weebly, '')
+        #     url = post_url.replace(weebly, '')
                 
-            if url:
-                filename = url.split('/')[-2]
-            else: 
-                filename = 'homepage'
+        #     if url:
+        #         filename = url.split('/')[-2]
+        #     else: 
+        #         filename = 'homepage'
 
-            print("... writing " + date + '-' + filename + '.html')
-            post_md = open('content/' + date + '-' + filename + '.html', 'w')
-            post_md.write(content)
-            post_md.close()
+        #     print("... writing " + date + '-' + filename + '.html')
+        #     post_md = open('content/' + date + '-' + filename + '.html', 'w')
+        #     post_md.write(content)
+        #     post_md.close()
 
-            output += content
+        #     output += content
 
-        output += "</body></html>"
+        # output += "</body></html>"
 
-        print("... writing index.html")
-        post_md = open('content/index.html', 'w')
-        post_md.write(output)
-        post_md.close()
+        # print("... writing index.html")
+        # post_md = open('content/index.html', 'w')
+        # post_md.write(output)
+        # post_md.close()
 
 
     def download_image(self, image_url):

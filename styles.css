@@ -30,6 +30,14 @@ image-grid {
     grid-column-gap: 2%;
 }
 
+image-grid > .wp-caption{
+    position: relative;
+}
+
+image-grid > .wp-caption img{
+    max-width: 100%
+}
+
 #page-contents a {
     color: black;
     font-family: "Cardo";
