@@ -26,7 +26,8 @@ body {
 
 image-grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 49% 49%;
+    grid-column-gap: 2%;
 }
 
 #page-contents a {
@@ -36,7 +37,7 @@ image-grid {
 
 dd.wp-caption-dd, .wp-caption-text {
     text-align: center;
-    //
+        display: table;
     font-variant:;
     font-size: 15px;
     line-height: 17px;
@@ -143,11 +144,13 @@ span.c-permalink {
     max-width: 90%;
 }
 
-.page > .wp-caption.alignleft, .page .wp-caption.alignright, .page > .wp-caption.aligncenter {
+.page > .wp-caption.alignleft, .page .wp-caption.alignright, .page > .wp-caption.aligncenter, image-grid .wp-caption {
     margin: 0 auto;
     margin-top: 50px;
     background: rgba(244, 244, 244, 1);
     padding: 20px 15px;
+    display: table;
+    box-sizing: border-box;
     text-align:center;
     border-bottom: 4px solid rgba(236,236,236,1);
 }
