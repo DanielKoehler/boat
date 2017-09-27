@@ -1,0 +1,153 @@
+div.pad.content {
+    margin: 0px auto;
+    font-family: 'Cardo', serif;
+    line-height: 2em;
+    /* margin-bottom: 20px; */
+    padding: 80px 0 6px;
+    background: #FBFBFB;
+}
+div.pad.content > *, div#comments > * {
+    max-width: 666px;
+    margin: auto;
+    text-align: justify;
+    /* transform: scale(0.7); */
+    clear: both;
+    /* padding-bottom: 300px; */
+}
+
+body {
+    padding-left: 265px;
+}
+
+.wp-caption {
+    align-self: center;
+    justify-self: center;
+}
+
+image-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#page-contents a {
+    color: black;
+    font-family: "Cardo";
+}
+
+dd.wp-caption-dd, .wp-caption-text {
+    text-align: center;
+    //
+    font-variant:;
+    font-size: 15px;
+    line-height: 17px;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+html, body{margin:0;}
+
+div#respond {
+    display: none;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+.date {
+    font-weight: bold;
+}
+
+h1.pagetitle {
+    padding-bottom: 60px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.navigation {
+    display: none;
+}
+
+div#jp-post-flair {
+    display: none;
+}
+
+.wpcnt {
+    display: none;
+}
+
+.post-footer {
+    display: none;
+}
+
+.comment-number {
+    // display: none;
+}
+
+div#page-contents {
+    position: fixed;
+    left:0;
+    width: 265px;
+    height: 100vh;
+    background: #FBFBFB;
+    padding: 10px 20px 10px 10px;
+    box-sizing: border-box;
+    border-right: 2px solid #eaeaea;
+}
+
+div#comments {
+    display: none;
+    width:100%;
+    max-width: 100% !important;
+    padding-top: 20px;
+    margin-top: 30px;
+    background: #565656;
+    color: white;
+}
+
+ol.commentlist {
+    list-style: none;
+}
+
+ol.commentlist > li {
+    flex-direction: row;
+    display: flex;
+}
+
+
+hr {
+    border: 1px solid #e8e8e8;
+}
+
+.c-grav {
+    padding: 4px 20px 0 0;
+}
+
+span.c-permalink {
+    display: none;
+}
+
+.reply {
+    display: none;
+}
+
+// .gallery-item {
+//     width: 50% !important;
+// }
+
+.gallery-item img {
+    width: auto !important;
+    height: auto !important;
+    padding:20px;
+    border: 0 !important;
+    max-width: 90%;
+}
+
+.page > .wp-caption.alignleft, .page .wp-caption.alignright, .page > .wp-caption.aligncenter {
+    margin: 0 auto;
+    margin-top: 50px;
+    background: rgba(244, 244, 244, 1);
+    padding: 20px 15px;
+    text-align:center;
+    border-bottom: 4px solid rgba(236,236,236,1);
+}
